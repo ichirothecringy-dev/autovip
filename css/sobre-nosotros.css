@@ -1,0 +1,118 @@
+body {
+  padding-top: 60px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+}
+
+/*****************************************************************
+
+    HEADER
+
+/*****************************************************************/
+
+#header {
+  background-color: #222;
+  border-bottom: 4px solid #ff8f00;
+}
+
+#header-logo {
+  width: auto;
+  height: 20px;
+}
+
+/*****************************************************************
+
+    SOBRE NOSOTROS
+
+/*****************************************************************/
+
+.lorem {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 9;
+  -webkit-box-orient: vertical;
+}
+
+/*****************************************************************
+  
+      NUESTRO EQUIPO
+  
+  /*****************************************************************/
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.cofundador-text {
+  color: gray;
+}
+
+/*****************************************************************
+
+    FOOTER
+
+/*****************************************************************/
+
+#footer {
+  border-top: 4px solid #ff8f00;
+  background-color: #222;
+  margin-top: 40px;
+  color: #eeeeee;
+  padding: 80px 0;
+  font-size: 1rem;
+}
+
+#footer-logo {
+  width: auto;
+  height: 20px;
+  margin-bottom: 15px;
+}
+
+#footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+#footer ul li {
+  list-style: none;
+  margin-bottom: 6px;
+}
+
+#footer ul li a,
+#footer ul li a:visited {
+  color: #eeeeee;
+  text-decoration: none;
+}
+
+/*****************************************************************
+
+    MODAL
+
+******************************************************************/
+
+#modal-popup {
+  border-top: 4px solid #ff8f00;
+  border-bottom: 4px solid #ff8f00;
+}

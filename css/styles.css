@@ -1,0 +1,162 @@
+/* Mi código CSS */
+
+body {
+  padding-top: 60px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+}
+
+/*****************************************************************
+
+    HEADER
+
+/*****************************************************************/
+
+#header {
+  background-color: #222;
+  border-bottom: 4px solid #ff8f00;
+}
+
+#header-logo {
+  width: auto;
+  height: 20px;
+}
+
+/*****************************************************************
+
+    HOME
+
+/*****************************************************************/
+
+#home {
+  flex: 1;
+}
+
+.img-carousel {
+  height: 36vw;
+  object-fit: cover;
+  border-bottom: 4px solid #ff8f00;
+}
+
+#home h1 span {
+  font-weight: 300;
+}
+
+#home .card h4 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+#home hr {
+  margin: 1.9rem 0 2.5rem;
+}
+
+@media (max-width: 767px) {
+  #home-intro {
+    height: 30vh;
+  }
+  #home h1 {
+    font-size: 1.8rem;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  margin: 10px;
+}
+
+/*****************************************************************
+
+    FOOTER
+
+/*****************************************************************/
+
+#footer {
+  border-top: 4px solid #ff8f00;
+  background-color: #222;
+  margin-top: 40px;
+  color: #eeeeee;
+  padding: 80px 0;
+  font-size: 1rem;
+}
+
+#footer-logo {
+  width: auto;
+  height: 20px;
+  margin-bottom: 15px;
+}
+
+#footer ul {
+  margin: 0;
+  padding: 0;
+}
+
+#footer ul li {
+  list-style: none;
+  margin-bottom: 6px;
+}
+
+#footer ul li a,
+#footer ul li a:visited {
+  color: #eeeeee;
+  text-decoration: none;
+}
+
+/*****************************************************************
+
+    FORMULARIO
+
+/*****************************************************************/
+
+.form {
+  background-color: rgb(243, 244, 244);
+}
+
+/*****************************************************************
+
+    PRODUCTOS
+
+***************************************************************/
+
+.car-info {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.car-card {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.car-model-price {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+/*****************************************************************
+
+    MODAL
+
+******************************************************************/
+
+#modal-popup {
+  border-top: 4px solid #ff8f00;
+  border-bottom: 4px solid #ff8f00;
+}
