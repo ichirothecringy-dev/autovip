@@ -1,10 +1,9 @@
-// FILTRO
+/****************** FILTRO *******************/
 // Years
 function loadYears(since, until) {
   if (since > until) {
     return;
   }
-
   const selectYear = document.querySelector("#yearSelector");
   for (let year = until; year >= since; year--) {
     const option = document.createElement("option");
@@ -15,6 +14,19 @@ function loadYears(since, until) {
 }
 loadYears(1900, 2023);
 
+// Esto elimina todas las opciones de la lista excepto la primera. Sirve en caso que no se haya elegido nada antes.
+function insertToSelector(selector, optionList) {
+  let firstOption = selector.firstElementChild;
+  selector.innerHTML = "";
+  selector.appendChild(firstOption);
+  for (const option of optionList) {
+    const newOption = document.createElement("option");
+    newOption.value = option;
+    newOption.text = option;
+    selector.appendChild(newOption);
+  }
+}
+
 // Brands and models
 function loadBrandsAndModels() {
   fetch("https://ha-front-api-proyecto-final.vercel.app/brands")
@@ -24,7 +36,6 @@ function loadBrandsAndModels() {
     .then(function (brands) {
       const brandOptions = document.querySelector("#brandOption");
       const modelOptions = document.querySelector("#modelOption");
-
       insertToSelector(brandOptions, brands);
       brandOptions.addEventListener("change", (e) => {
         fetch(
@@ -42,19 +53,6 @@ function loadBrandsAndModels() {
 }
 loadBrandsAndModels();
 
-// Esto elimina todas las opciones de la lista excepto la primera. Sirve en caso que no se haya elegido nada antes.
-function insertToSelector(selector, optionList) {
-  let firstOption = selector.firstElementChild;
-  selector.innerHTML = "";
-  selector.appendChild(firstOption);
-  for (const option of optionList) {
-    const newOption = document.createElement("option");
-    newOption.value = option;
-    newOption.text = option;
-    selector.appendChild(newOption);
-  }
-}
-
 // Boton de filtro
 const filter = document.querySelector("#filter-btn");
 filter.addEventListener("click", function (filter) {
@@ -66,9 +64,8 @@ filter.addEventListener("click", function (filter) {
     `https://ha-front-api-proyecto-final.vercel.app/cars?year=${year}&brand=${brand}&model=${model}&state=${state}`
   );
 });
-loadCars("https://ha-front-api-proyecto-final.vercel.app/cars");
 
-// PRODUCTS
+/****************** CARS *******************/
 function loadCars(apiURL) {
   fetch(apiURL)
     .then(function (res) {
@@ -82,8 +79,8 @@ function loadCars(apiURL) {
         carsAlert.insertAdjacentHTML(
           "beforeend",
           `<div class="alert alert-warning" role="alert">
-          No se han encontrado resultados para tu búsqueda.
-      </div>`
+            No se han encontrado resultados para tu búsqueda.
+          </div>`
         );
       }
       for (const car of cars) {
@@ -113,7 +110,6 @@ function loadCars(apiURL) {
                 />
               </div>
             </div>
-
             <!-- Info -->
             <div class="col-12 col-lg-7 col-xl-8 pb-4 car-card">
               <div>
@@ -147,3 +143,4 @@ function loadCars(apiURL) {
       console.error(err);
     });
 }
+loadCars("https://ha-front-api-proyecto-final.vercel.app/cars");
